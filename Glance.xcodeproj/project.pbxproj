@@ -8,17 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3510A907219114750034000B /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3510A906219114750034000B /* AddTaskViewController.swift */; };
-		3510A90921911C660034000B /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3510A90821911C660034000B /* Float.swift */; };
 		7A0FEBEF218E3ADF004DFF21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FEBEE218E3ADF004DFF21 /* AppDelegate.swift */; };
 		7A0FEBF1218E3ADF004DFF21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FEBF0218E3ADF004DFF21 /* ViewController.swift */; };
 		7A0FEBF4218E3ADF004DFF21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0FEBF2218E3ADF004DFF21 /* Main.storyboard */; };
 		7A0FEBF6218E3AE2004DFF21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0FEBF5218E3AE2004DFF21 /* Assets.xcassets */; };
 		7A0FEBF9218E3AE2004DFF21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0FEBF7218E3AE2004DFF21 /* LaunchScreen.storyboard */; };
+		7A0FEC1021911D9A004DFF21 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FEC0F21911D9A004DFF21 /* Float.swift */; };
+		7A0FEC1221911F63004DFF21 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FEC1121911F63004DFF21 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3510A906219114750034000B /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
-		3510A90821911C660034000B /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Float.swift; path = Glance/Float.swift; sourceTree = SOURCE_ROOT; };
 		7A0FEBEB218E3ADE004DFF21 /* Glance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Glance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0FEBEE218E3ADF004DFF21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A0FEBF0218E3ADF004DFF21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -26,6 +26,8 @@
 		7A0FEBF5218E3AE2004DFF21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A0FEBF8218E3AE2004DFF21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A0FEBFA218E3AE2004DFF21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A0FEC0F21911D9A004DFF21 /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
+		7A0FEC1121911F63004DFF21 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 		7A0FEC00218E3AF6004DFF21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7A0FEC1121911F63004DFF21 /* Task.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -97,7 +100,7 @@
 		7A0FEC03218E3B07004DFF21 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				3510A90821911C660034000B /* Float.swift */,
+				7A0FEC0F21911D9A004DFF21 /* Float.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -189,8 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3510A90921911C660034000B /* Float.swift in Sources */,
+				7A0FEC1021911D9A004DFF21 /* Float.swift in Sources */,
 				7A0FEBF1218E3ADF004DFF21 /* ViewController.swift in Sources */,
+				7A0FEC1221911F63004DFF21 /* Task.swift in Sources */,
 				3510A907219114750034000B /* AddTaskViewController.swift in Sources */,
 				7A0FEBEF218E3ADF004DFF21 /* AppDelegate.swift in Sources */,
 			);

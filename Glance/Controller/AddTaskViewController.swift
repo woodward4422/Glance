@@ -21,6 +21,8 @@ class AddTaskViewController: UIViewController {
     
     @IBOutlet weak var dueDatePicker: UIDatePicker!
     
+    var actualHours: Float = 0.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +31,15 @@ class AddTaskViewController: UIViewController {
     
 
     @IBAction func createTaskButton(_ sender: Any) {
+        
+        guard let taskTitle = taskTitleInput.text else { fatalError("User did not input task title")}
+        
+        
+        let newTask = Task(title: taskTitle, duration: actualHours, dueDate: dueDatePicker.date)
+        
+        
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
  
@@ -37,7 +48,7 @@ class AddTaskViewController: UIViewController {
     
         let maxHours = 10.0
         
-        let actualHours = Float(currentValue * Float(maxHours)).rounded(toPlaces: 1)
+        actualHours = Float(currentValue * Float(maxHours)).rounded(toPlaces: 1)
         
         durationLabel.text = String(actualHours) + " hrs"
         
