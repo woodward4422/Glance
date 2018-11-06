@@ -34,9 +34,13 @@ class AddTaskViewController: UIViewController {
  
     @IBAction func durationValueChanged(_ sender: UISlider) {
         let currentValue = sender.value
-        let minValue = sender.minimumValue
-        let maxValue - sender.maximumValue
     
+        let maxHours = 10.0
+        
+        let actualHours = Float(currentValue * Float(maxHours)).rounded(toPlaces: 1)
+        
+        durationLabel.text = String(actualHours) + " hrs"
+        
     }
     
     
