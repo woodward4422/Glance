@@ -38,6 +38,7 @@
 		7A0FEBE2218E3ADE004DFF21 = {
 			isa = PBXGroup;
 			children = (
+				7A0FEBFA218E3AE2004DFF21 /* Info.plist */,
 				7A0FEBED218E3ADE004DFF21 /* Glance */,
 				7A0FEBEC218E3ADE004DFF21 /* Products */,
 			);
@@ -67,8 +68,6 @@
 		7A0FEC00218E3AF6004DFF21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				7A0FEBF7218E3AE2004DFF21 /* LaunchScreen.storyboard */,
-				7A0FEBF2218E3ADF004DFF21 /* Main.storyboard */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -76,6 +75,8 @@
 		7A0FEC01218E3AFB004DFF21 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7A0FEBF2218E3ADF004DFF21 /* Main.storyboard */,
+				7A0FEBF7218E3AE2004DFF21 /* LaunchScreen.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -105,7 +106,6 @@
 		7A0FEC05218E3B26004DFF21 /* Supporting */ = {
 			isa = PBXGroup;
 			children = (
-				7A0FEBFA218E3AE2004DFF21 /* Info.plist */,
 				7A0FEBF5218E3AE2004DFF21 /* Assets.xcassets */,
 				7A0FEBEE218E3ADF004DFF21 /* AppDelegate.swift */,
 			);
@@ -332,7 +332,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QBGPXWFD5T;
-				INFOPLIST_FILE = Glance/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -350,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = QBGPXWFD5T;
-				INFOPLIST_FILE = Glance/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
