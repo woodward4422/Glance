@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol AddTaskViewControllerDelegate {
+    func taskCreated(task: Task)
+}
+
 class AddTaskViewController: UIViewController {
 
     @IBOutlet weak var taskTitleInput: UITextField!
@@ -23,9 +27,10 @@ class AddTaskViewController: UIViewController {
     
     var actualHours: Float = 0.0
     
+    var delegate: AddTaskViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
@@ -37,6 +42,7 @@ class AddTaskViewController: UIViewController {
         
         let newTask = Task(title: taskTitle, duration: actualHours, dueDate: dueDatePicker.date)
         
+       delegate?.taskCreated(task: newTask)
         
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
@@ -53,6 +59,8 @@ class AddTaskViewController: UIViewController {
         durationLabel.text = String(actualHours) + " hrs"
         
     }
+    
+
     
     
 }
