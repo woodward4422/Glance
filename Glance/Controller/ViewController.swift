@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, AddTaskViewControllerDelegate {
- 
+    
     
     
     @IBOutlet weak var addButton: UIBarButtonItem!
@@ -20,8 +20,8 @@ class ViewController: UIViewController, AddTaskViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-    taskCollectionView.reloadData()
-    
+        taskCollectionView.reloadData()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -29,7 +29,7 @@ class ViewController: UIViewController, AddTaskViewControllerDelegate {
         taskCollectionView.reloadData()
     }
     
-
+    
     func taskCreated(task:Task){
         print("Delegate worked")
         tasks.append(task)
@@ -43,7 +43,7 @@ class ViewController: UIViewController, AddTaskViewControllerDelegate {
         
     }
     
-
+    
 }
 
 
