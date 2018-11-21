@@ -8,15 +8,4 @@
 
 import Foundation
 
-struct Task{
-    var title: String
-    var duration: Float
-    var dueDate: Date
-    
-    init(title: String, duration: Float, dueDate: Date){
-        self.title = title
-        self.duration = duration
-        self.dueDate = dueDate
-    }
-    
-}
+

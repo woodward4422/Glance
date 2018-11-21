@@ -8,11 +8,9 @@
 
 import UIKit
 
-protocol AddTaskViewControllerDelegate {
-    func taskCreated(task: Task)
-}
 
-class AddTaskViewController: UIViewController {
+
+class AddTaskViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var taskTitleInput: UITextField!
     
@@ -27,10 +25,10 @@ class AddTaskViewController: UIViewController {
     
     var actualHours: Float = 0.0
     
-    var delegate: AddTaskViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        taskTitleInput.delegate = self
         // Do any additional setup after loading the view.
     }
     
@@ -39,10 +37,8 @@ class AddTaskViewController: UIViewController {
         
         guard let taskTitle = taskTitleInput.text else { fatalError("User did not input task title")}
         
+        CoreDataHelper.createNewTask(title: taskTitle, duration: actualHours, dueDate: dueDatePicker.date)
         
-        let newTask = Task(title: taskTitle, duration: actualHours, dueDate: dueDatePicker.date)
-        
-       delegate?.taskCreated(task: newTask)
         
         navigationController?.popViewController(animated: true)
         dismiss(animated: true, completion: nil)
@@ -63,4 +59,11 @@ class AddTaskViewController: UIViewController {
 
     
     
+}
+
+extension AddTaskViewController {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, AddTaskViewControllerDelegate {
+class ViewController: UIViewController {
     
     
     
@@ -26,22 +26,14 @@ class ViewController: UIViewController, AddTaskViewControllerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tasks = CoreDataHelper.retrieveTasks()
         taskCollectionView.reloadData()
     }
     
     
-    func taskCreated(task:Task){
-        print("Delegate worked")
-        tasks.append(task)
-    }
+
     
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destination = segue.destination as? AddTaskViewController{
-            destination.delegate = self
-        }
-        
-    }
     
     
 }
@@ -56,7 +48,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "task cell", for: indexPath) as! TaskCollectionViewCell
         let currentTask = tasks[indexPath.row]
-        cell.setTitle(title: currentTask.title)
+        guard let taskTitle = currentTask.title else { return cell }
+        cell.setTitle(title: taskTitle)
+        cell.progressIndicatorView.backgroundColor = UIColor.getRandomColor()
+        
         return cell
     }
 }

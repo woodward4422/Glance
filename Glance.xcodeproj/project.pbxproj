@@ -16,6 +16,9 @@
 		7A0FEC1021911D9A004DFF21 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FEC0F21911D9A004DFF21 /* Float.swift */; };
 		7A0FEC1221911F63004DFF21 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0FEC1121911F63004DFF21 /* Task.swift */; };
 		7A119AC0219A526A00AD82B4 /* TaskCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A119ABF219A526A00AD82B4 /* TaskCollectionViewCell.swift */; };
+		7A119AC3219B81F600AD82B4 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A119AC2219B81F500AD82B4 /* CoreDataHelper.swift */; };
+		7A119AC6219D04B600AD82B4 /* Glance.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A119AC4219D04B500AD82B4 /* Glance.xcdatamodeld */; };
+		7AF7929021A5F645008757A4 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF7928F21A5F645008757A4 /* Color+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		7A0FEC0F21911D9A004DFF21 /* Float.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		7A0FEC1121911F63004DFF21 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		7A119ABF219A526A00AD82B4 /* TaskCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCollectionViewCell.swift; sourceTree = "<group>"; };
+		7A119AC2219B81F500AD82B4 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
+		7A119AC5219D04B600AD82B4 /* Glance.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Glance.xcdatamodel; sourceTree = "<group>"; };
+		7AF7928F21A5F645008757A4 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,12 +69,14 @@
 		7A0FEBED218E3ADE004DFF21 /* Glance */ = {
 			isa = PBXGroup;
 			children = (
+				7A119AC1219B81D400AD82B4 /* Persistence Layer */,
 				7A0FEC05218E3B26004DFF21 /* Supporting */,
 				7A0FEC04218E3B1D004DFF21 /* Services */,
 				7A0FEC03218E3B07004DFF21 /* Extensions */,
 				7A0FEC02218E3B01004DFF21 /* Controller */,
 				7A0FEC01218E3AFB004DFF21 /* View */,
 				7A0FEC00218E3AF6004DFF21 /* Model */,
+				7A119AC4219D04B500AD82B4 /* Glance.xcdatamodeld */,
 			);
 			path = Glance;
 			sourceTree = "<group>";
@@ -104,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				7A0FEC0F21911D9A004DFF21 /* Float.swift */,
+				7AF7928F21A5F645008757A4 /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -122,6 +131,14 @@
 				7A0FEBEE218E3ADF004DFF21 /* AppDelegate.swift */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		7A119AC1219B81D400AD82B4 /* Persistence Layer */ = {
+			isa = PBXGroup;
+			children = (
+				7A119AC2219B81F500AD82B4 /* CoreDataHelper.swift */,
+			);
+			path = "Persistence Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -196,9 +213,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A0FEC1021911D9A004DFF21 /* Float.swift in Sources */,
+				7AF7929021A5F645008757A4 /* Color+Extension.swift in Sources */,
 				7A0FEBF1218E3ADF004DFF21 /* ViewController.swift in Sources */,
 				7A0FEC1221911F63004DFF21 /* Task.swift in Sources */,
+				7A119AC3219B81F600AD82B4 /* CoreDataHelper.swift in Sources */,
 				7A119AC0219A526A00AD82B4 /* TaskCollectionViewCell.swift in Sources */,
+				7A119AC6219D04B600AD82B4 /* Glance.xcdatamodeld in Sources */,
 				3510A907219114750034000B /* AddTaskViewController.swift in Sources */,
 				7A0FEBEF218E3ADF004DFF21 /* AppDelegate.swift in Sources */,
 			);
@@ -400,6 +420,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7A119AC4219D04B500AD82B4 /* Glance.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7A119AC5219D04B600AD82B4 /* Glance.xcdatamodel */,
+			);
+			currentVersion = 7A119AC5219D04B600AD82B4 /* Glance.xcdatamodel */;
+			path = Glance.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7A0FEBE3218E3ADE004DFF21 /* Project object */;
 }
