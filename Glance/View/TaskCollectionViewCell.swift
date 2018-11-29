@@ -16,6 +16,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     var cellTask = Task()
     
+    
     var initialCenter = CGPoint()  // The initial center point of the view.
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,6 +45,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
         if gestureRecognizer.state == .ended{
             cellTask.sliderWidth = Float(gestureRecognizer.location(in: progressIndicatorView).x)
         }
+        
     }
     
     func setTitle(title: String){
