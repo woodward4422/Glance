@@ -35,33 +35,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SnO-Dx-pbH" userLabel="completion covering view">
-                                                    <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
-                                                    <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sup Homie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-nZ-gAt">
-                                                            <rect key="frame" x="0.0" y="3" width="250" height="44"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="height" constant="44" id="trQ-EU-vRt"/>
-                                                            </constraints>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                    </subviews>
+                                                    <rect key="frame" x="0.0" y="0.0" width="0.0" height="100"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="hHi-nZ-gAt" secondAttribute="trailing" id="1Mj-Qp-GPl"/>
-                                                        <constraint firstAttribute="width" constant="250" id="3rr-oC-BtE"/>
-                                                        <constraint firstItem="hHi-nZ-gAt" firstAttribute="centerY" secondItem="SnO-Dx-pbH" secondAttribute="centerY" id="YXw-ND-S1t"/>
-                                                        <constraint firstItem="hHi-nZ-gAt" firstAttribute="leading" secondItem="SnO-Dx-pbH" secondAttribute="leading" id="vQb-IS-Jhw"/>
+                                                        <constraint firstAttribute="width" id="3rr-oC-BtE"/>
                                                     </constraints>
                                                 </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sup Homie" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-nZ-gAt">
+                                                    <rect key="frame" x="106" y="28" width="88" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="88" id="g8k-Sy-DUI"/>
+                                                        <constraint firstAttribute="height" constant="44" id="trQ-EU-vRt"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstItem="hHi-nZ-gAt" firstAttribute="centerX" secondItem="hKZ-bG-7lf" secondAttribute="centerX" id="4Yn-5u-HgN"/>
                                             <constraint firstAttribute="bottom" secondItem="SnO-Dx-pbH" secondAttribute="bottom" id="Lgx-gw-k17"/>
+                                            <constraint firstItem="hHi-nZ-gAt" firstAttribute="centerY" secondItem="hKZ-bG-7lf" secondAttribute="centerY" id="PLX-5o-gLs"/>
                                             <constraint firstItem="SnO-Dx-pbH" firstAttribute="top" secondItem="hKZ-bG-7lf" secondAttribute="top" id="eFI-S8-ozV"/>
                                             <constraint firstItem="SnO-Dx-pbH" firstAttribute="leading" secondItem="hKZ-bG-7lf" secondAttribute="leading" id="ha7-OX-4ba"/>
                                         </constraints>

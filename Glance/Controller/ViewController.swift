@@ -48,9 +48,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "task cell", for: indexPath) as! TaskCollectionViewCell
         let currentTask = tasks[indexPath.row]
+        cell.cellTask = currentTask
         guard let taskTitle = currentTask.title else { return cell }
         cell.setTitle(title: taskTitle)
-        cell.progressIndicatorView.backgroundColor = UIColor.getRandomColor()
+        cell.progressIndicatorView.backgroundColor = UIColor.getColor(index: Int(Int16(currentTask.colorIndex)))
         
         return cell
     }

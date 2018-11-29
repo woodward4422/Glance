@@ -14,6 +14,8 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var progressIndicatorView: UIView!
     
+    var cellTask = Task()
+    
     var initialCenter = CGPoint()  // The initial center point of the view.
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,6 +40,9 @@ class TaskCollectionViewCell: UICollectionViewCell {
         if gestureRecognizer.state != .cancelled {
             //set the progress indicator's width to the x value of the user's thumb
             progressIndicatorView.frame.size.width = gestureRecognizer.location(in: progressIndicatorView).x
+        }
+        if gestureRecognizer.state == .ended{
+            cellTask.sliderWidth = Float(gestureRecognizer.location(in: progressIndicatorView).x)
         }
     }
     

@@ -37,7 +37,7 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
         
         guard let taskTitle = taskTitleInput.text else { fatalError("User did not input task title")}
         
-        CoreDataHelper.createNewTask(title: taskTitle, duration: actualHours, dueDate: dueDatePicker.date)
+        CoreDataHelper.createNewTask(title: taskTitle, duration: actualHours, dueDate: dueDatePicker.date, colorIndex: UIColor.getRandomColorIndex())
         
         
         navigationController?.popViewController(animated: true)

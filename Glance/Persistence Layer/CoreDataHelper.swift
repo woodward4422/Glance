@@ -50,11 +50,12 @@ struct CoreDataHelper {
         }
     }
     
-    static func createNewTask(title: String, duration: Float,dueDate: Date) -> Task{
+    static func createNewTask(title: String, duration: Float,dueDate: Date, colorIndex: Int16) -> Task{
         let newTask = self.newTask()
         newTask.title = title
         newTask.duration = duration
         newTask.dueDate = dueDate
+        newTask.colorIndex = colorIndex
         self.saveTasks()
         return newTask
     }

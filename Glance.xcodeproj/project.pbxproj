@@ -76,7 +76,6 @@
 				7A0FEC02218E3B01004DFF21 /* Controller */,
 				7A0FEC01218E3AFB004DFF21 /* View */,
 				7A0FEC00218E3AF6004DFF21 /* Model */,
-				7A119AC4219D04B500AD82B4 /* Glance.xcdatamodeld */,
 			);
 			path = Glance;
 			sourceTree = "<group>";
@@ -84,6 +83,7 @@
 		7A0FEC00218E3AF6004DFF21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7A119AC4219D04B500AD82B4 /* Glance.xcdatamodeld */,
 				7A0FEC1121911F63004DFF21 /* Task.swift */,
 			);
 			path = Model;
