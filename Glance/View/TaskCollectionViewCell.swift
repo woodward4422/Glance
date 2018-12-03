@@ -21,9 +21,8 @@ class TaskCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupGestureRecognizer()
-    }
-    
 
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -59,5 +58,9 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     func setTitle(title: String){
         taskNameLabel.text = title 
+    }
+    
+    func setWidth(width: CGFloat,task: Task){
+        progressIndicatorView.frame.size.width = CGFloat(task.sliderWidth)
     }
 }

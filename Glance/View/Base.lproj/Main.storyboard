@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kTX-U3-tpz">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="500.5" width="375" height="166.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="30" id="mhp-Ha-BI8">
                                     <size key="itemSize" width="300" height="100"/>
@@ -80,7 +80,7 @@
                             <constraint firstItem="kTX-U3-tpz" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="476-xA-9Gj"/>
                             <constraint firstItem="kTX-U3-tpz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="EaX-y0-AiD"/>
                             <constraint firstItem="kTX-U3-tpz" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="XL8-j8-tIs"/>
-                            <constraint firstItem="kTX-U3-tpz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="cJ7-5E-1yd"/>
+                            <constraint firstItem="kTX-U3-tpz" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.25" id="x3v-4g-o53"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

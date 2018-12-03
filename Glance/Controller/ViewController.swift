@@ -51,6 +51,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let currentTask = tasks[indexPath.row]
         cell.cellTask = currentTask
         cell.progressIndicatorView.frame.size.width = CGFloat(currentTask.sliderWidth ?? 0)
+        cell.setWidth(width: 100, task: currentTask)
         guard let taskTitle = currentTask.title else { return cell }
         cell.setTitle(title: taskTitle)
         cell.progressIndicatorView.backgroundColor = UIColor.getColor(index: Int(Int16(currentTask.colorIndex)))
