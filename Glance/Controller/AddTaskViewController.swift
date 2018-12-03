@@ -33,7 +33,10 @@ class AddTaskViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        dueDatePicker.minimumDate = Date()
+        let startDate = Date()
+        let endDate = Date(timeInterval: 7*86400, since: startDate)
+        dueDatePicker.minimumDate = startDate
+        dueDatePicker.maximumDate = endDate
     }
 
     @IBAction func createTaskButton(_ sender: Any) {
