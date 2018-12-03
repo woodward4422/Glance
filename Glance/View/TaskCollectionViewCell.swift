@@ -23,10 +23,18 @@ class TaskCollectionViewCell: UICollectionViewCell {
         setupGestureRecognizer()
     }
     
+
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupGestureRecognizer()
     }
+    
+//    override func layoutSubviews() {
+//        super.layoutSubviews()
+//        progressIndicatorView.frame.size.width = 50
+//
+//    }
     
     private func setupGestureRecognizer() {
         let panRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panned(_:)))
@@ -44,6 +52,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
         }
         if gestureRecognizer.state == .ended{
             cellTask.sliderWidth = Float(gestureRecognizer.location(in: progressIndicatorView).x)
+            CoreDataHelper.saveTasks()
         }
         
     }

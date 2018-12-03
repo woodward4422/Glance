@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        tasks = CoreDataHelper.retrieveTasks()
         taskCollectionView.reloadData()
         
     }
@@ -49,6 +50,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "task cell", for: indexPath) as! TaskCollectionViewCell
         let currentTask = tasks[indexPath.row]
         cell.cellTask = currentTask
+        cell.progressIndicatorView.frame.size.width = CGFloat(currentTask.sliderWidth ?? 0)
         guard let taskTitle = currentTask.title else { return cell }
         cell.setTitle(title: taskTitle)
         cell.progressIndicatorView.backgroundColor = UIColor.getColor(index: Int(Int16(currentTask.colorIndex)))

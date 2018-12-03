@@ -56,7 +56,7 @@ struct CoreDataHelper {
         newTask.duration = duration
         newTask.dueDate = dueDate
         newTask.colorIndex = colorIndex
-        newTask.sliderWidth = 30.0
+        newTask.sliderWidth = 0
         self.saveTasks()
         return newTask
     }
