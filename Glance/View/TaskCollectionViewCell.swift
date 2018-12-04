@@ -48,6 +48,9 @@ class TaskCollectionViewCell: UICollectionViewCell {
         if gestureRecognizer.state != .cancelled {
             //set the progress indicator's width to the x value of the user's thumb
             progressIndicatorView.frame.size.width = gestureRecognizer.location(in: progressIndicatorView).x
+            
+            progressIndicatorView.backgroundColor = UIColor(red: ((255-(progressIndicatorView.frame.size.width))/255.0), green: (progressIndicatorView.frame.size.width)/255.0, blue: 0/255.0, alpha: 0.9)
+           
         }
         if gestureRecognizer.state == .ended{
             cellTask.sliderWidth = Float(gestureRecognizer.location(in: progressIndicatorView).x)
