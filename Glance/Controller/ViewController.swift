@@ -46,10 +46,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "task cell", for: indexPath) as! TaskCollectionViewCell
+        cell.layer.masksToBounds = true
+        cell.layer.cornerRadius = 12;
         let currentTask = tasks[indexPath.row]
         cell.cellTask = currentTask
-        cell.progressIndicatorView.frame.size.width = CGFloat(currentTask.sliderWidth ?? 0)
         cell.setWidth(width: 100, task: currentTask)
+        print(currentTask.duration)
         guard let taskTitle = currentTask.title else { return cell }
         cell.setTitle(title: taskTitle)
         cell.progressIndicatorView.backgroundColor = UIColor.getColor(index: Int(Int16(currentTask.colorIndex)))
