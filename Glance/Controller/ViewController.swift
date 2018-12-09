@@ -10,8 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
-    
     @IBOutlet weak var addButton: UIBarButtonItem!
     
     @IBOutlet weak var taskCollectionView: UICollectionView!
