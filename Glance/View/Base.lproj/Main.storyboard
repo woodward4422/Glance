@@ -42,46 +42,39 @@
                                                         <constraint firstAttribute="width" id="3rr-oC-BtE"/>
                                                     </constraints>
                                                 </view>
-                                                <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="ymg-pQ-SxU">
-                                                    <rect key="frame" x="10" y="12.5" width="74.5" height="75"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dez-35-nRB">
+                                                    <rect key="frame" x="8" y="28" width="284" height="64"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Task" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-nZ-gAt">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74.5" height="35.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Task" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hHi-nZ-gAt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="187" height="64"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5.5 Hours" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pKo-jK-Z9V">
-                                                            <rect key="frame" x="0.0" y="54.5" width="74.5" height="20.5"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Not Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWY-vy-ptL">
+                                                            <rect key="frame" x="195" y="0.0" width="89" height="64"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Not Started" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DWY-vy-ptL">
-                                                    <rect key="frame" x="200" y="27" width="89" height="46"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                         <constraints>
-                                            <constraint firstAttribute="bottomMargin" secondItem="DWY-vy-ptL" secondAttribute="bottom" constant="16" id="Jhz-lS-XaI"/>
+                                            <constraint firstItem="dez-35-nRB" firstAttribute="top" secondItem="hKZ-bG-7lf" secondAttribute="topMargin" id="8ZS-r0-S6W"/>
                                             <constraint firstAttribute="bottom" secondItem="SnO-Dx-pbH" secondAttribute="bottom" id="Lgx-gw-k17"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="DWY-vy-ptL" secondAttribute="trailing" constant="3" id="QhV-Dv-9Xn"/>
-                                            <constraint firstItem="DWY-vy-ptL" firstAttribute="top" secondItem="hKZ-bG-7lf" secondAttribute="topMargin" multiplier="0.5" constant="16" id="Qj7-d6-ZOx"/>
-                                            <constraint firstItem="ymg-pQ-SxU" firstAttribute="height" secondItem="hKZ-bG-7lf" secondAttribute="height" multiplier="0.75" id="aWH-QV-1Rj"/>
-                                            <constraint firstItem="ymg-pQ-SxU" firstAttribute="leading" secondItem="SnO-Dx-pbH" secondAttribute="trailing" constant="10" id="djc-Wx-cPR"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="dez-35-nRB" secondAttribute="trailing" id="Pcq-m3-SK8"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="dez-35-nRB" secondAttribute="bottom" id="d9W-wJ-wM1"/>
                                             <constraint firstItem="SnO-Dx-pbH" firstAttribute="top" secondItem="hKZ-bG-7lf" secondAttribute="top" id="eFI-S8-ozV"/>
-                                            <constraint firstItem="ymg-pQ-SxU" firstAttribute="centerY" secondItem="SnO-Dx-pbH" secondAttribute="centerY" id="fxg-iQ-AFN"/>
+                                            <constraint firstItem="dez-35-nRB" firstAttribute="leading" secondItem="hKZ-bG-7lf" secondAttribute="leadingMargin" id="eMl-pn-URb"/>
                                             <constraint firstItem="SnO-Dx-pbH" firstAttribute="leading" secondItem="hKZ-bG-7lf" secondAttribute="leading" id="ha7-OX-4ba"/>
                                         </constraints>
                                         <connections>
                                             <outlet property="progressIndicatorView" destination="SnO-Dx-pbH" id="wDW-mN-5zg"/>
+                                            <outlet property="progressViewWidthConstraint" destination="3rr-oC-BtE" id="X4o-jV-jPY"/>
                                             <outlet property="taskNameLabel" destination="hHi-nZ-gAt" id="SKd-JW-exG"/>
                                             <outlet property="taskPercentageLabel" destination="DWY-vy-ptL" id="gc0-98-9m2"/>
-                                            <outlet property="timeLeftLabel" destination="pKo-jK-Z9V" id="fOb-gy-Kpp"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -17,7 +17,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var progressIndicatorView: UIView!
     
-    @IBOutlet weak var timeLeftLabel: UILabel!
+    @IBOutlet weak var progressViewWidthConstraint: NSLayoutConstraint!
     
     var cellTask = Task()
     
@@ -54,6 +54,11 @@ class TaskCollectionViewCell: UICollectionViewCell {
         if gestureRecognizer.state == .changed {
 //            print(String(Int16(progressIndicatorView.frame.size.width / self.frame.size.width) * 100))
 //            taskPercentageLabel.text = String(Float(progressIndicatorView.frame.size.width / self.frame.size.width) * 100)
+            
+            progressViewWidthConstraint.constant = gestureRecognizer.location(in: progressIndicatorView).x
+            self.setNeedsLayout()
+
+            
             if(Int((gestureRecognizer.location(in: progressIndicatorView).x / self.frame.size.width * 100)) > 99){
                 
                 taskPercentageLabel.text = "Finished!"
@@ -64,60 +69,68 @@ class TaskCollectionViewCell: UICollectionViewCell {
             }
             else{
                 taskPercentageLabel.text = String(Int((gestureRecognizer.location(in: progressIndicatorView).x / self.frame.size.width * 100))) + " %"
+                cellTask.completionPercentage = Int16(Int((gestureRecognizer.location(in: progressIndicatorView).x / self.frame.size.width * 100)))
             }
-
-        }
-        
-        if gestureRecognizer.state != .cancelled {
-            //set the progress indicator's width to the x value of the user's thumb
-
-           progressIndicatorView.frame.size.width = gestureRecognizer.location(in: progressIndicatorView).x
-            
-//            progressIndicatorView.backgroundColor = UIColor(red: ((255-(progressIndicatorView.frame.size.width))/255.0), green: (progressIndicatorView.frame.size.width)/255.0, blue: 0/255.0, alpha: 0.9)
             
             if progressIndicatorView.frame.size.width < self.frame.size.width * 0.3{
-                 progressIndicatorView.backgroundColor =  #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
-                 cellTask.colorIndex = 0
-                 CoreDataHelper.saveTasks()
+                progressIndicatorView.backgroundColor =  #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+                cellTask.colorIndex = 0
             }
             else if progressIndicatorView.frame.size.width < self.frame.size.width * 0.6 {
                 progressIndicatorView.backgroundColor = #colorLiteral(red: 0.9529411765, green: 0.6, blue: 0.2431372549, alpha: 1)
                 cellTask.colorIndex = 1
-                CoreDataHelper.saveTasks()
             }
             else {
                 progressIndicatorView.backgroundColor = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
                 cellTask.colorIndex = 2
-                CoreDataHelper.saveTasks()
+ 
             }
-            
 
         }
         
+//        if gestureRecognizer.state != .cancelled {
+//            //set the progress indicator's width to the x value of the user's thumb
+//
+//
+//
+//
+//            //            progressIndicatorView.backgroundColor = UIColor(red: ((255-(progressIndicatorView.frame.size.width))/255.0), green: (progressIndicatorView.frame.size.width)/255.0, blue: 0/255.0, alpha: 0.9)
+//
+//
+//
+//
+//        }
+        
         if gestureRecognizer.state == .ended{
-            progressIndicatorView.frame.size.width = gestureRecognizer.location(in: progressIndicatorView).x
+//            progressIndicatorView.frame.size.width = gestureRecognizer.location(in: progressIndicatorView).x
+//
+////            if(cellTask.duration - Float(gestureRecognizer.location(in: progressIndicatorView).x / self.frame.size.width) * cellTask.duration < 0.01){
+////                timeLeftLabel.text = "Finished!"
+////            }
+////            else{
+////                var hoursCalc = cellTask.duration - Float(gestureRecognizer.location(in: progressIndicatorView).x / self.frame.size.width) * cellTask.duration
+////                hoursCalc = hoursCalc.rounded(toPlaces: 1)
+////                print(hoursCalc)
+////                timeLeftLabel.text = String(hoursCalc) + " Hours Left "
+////            }
+//
+//            cellTask.sliderWidth = Float(gestureRecognizer.location(in: progressIndicatorView).x)
+//            CoreDataHelper.saveTasks()
             
-            if(cellTask.duration - Float(gestureRecognizer.location(in: progressIndicatorView).x / self.frame.size.width) * cellTask.duration < 0.01){
-                timeLeftLabel.text = "Finished!"
-            }
-            else{
-                var hoursCalc = cellTask.duration - Float(gestureRecognizer.location(in: progressIndicatorView).x / self.frame.size.width) * cellTask.duration
-                hoursCalc = hoursCalc.rounded(toPlaces: 1)
-                print(hoursCalc)
-                timeLeftLabel.text = String(hoursCalc) + " Hours Left "
-            }
+ 
             
             cellTask.sliderWidth = Float(gestureRecognizer.location(in: progressIndicatorView).x)
             CoreDataHelper.saveTasks()
         }
         
     }
+        
+ 
     
     func setTitle(title: String){
         taskNameLabel.text = title 
     }
     
-    func setWidth(width: CGFloat,task: Task){
-        progressIndicatorView.frame.size.width = CGFloat(task.sliderWidth)
-    }
+
 }
+

@@ -50,10 +50,12 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         cell.layer.cornerRadius = 12;
         let currentTask = tasks[indexPath.row]
         cell.cellTask = currentTask
-        cell.setWidth(width: 100, task: currentTask)
         print(currentTask.duration)
         guard let taskTitle = currentTask.title else { return cell }
         cell.setTitle(title: taskTitle)
+        cell.progressIndicatorView.frame.size.width = CGFloat(currentTask.sliderWidth ?? 0)
+        cell.taskPercentageLabel.text = String(currentTask.completionPercentage) + " %"
+      
         cell.progressIndicatorView.backgroundColor = UIColor.getColor(index: Int(Int16(currentTask.colorIndex)))
         
         return cell
