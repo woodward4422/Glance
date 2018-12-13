@@ -19,7 +19,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var progressViewWidthConstraint: NSLayoutConstraint!
     
-    var cellTask = Task()
+    var cellTask: Task!
     
     
     var initialCenter = CGPoint()  // The initial center point of the view.

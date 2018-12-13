@@ -55,6 +55,7 @@
 				7A0FEBFA218E3AE2004DFF21 /* Info.plist */,
 				7A0FEBED218E3ADE004DFF21 /* Glance */,
 				7A0FEBEC218E3ADE004DFF21 /* Products */,
+				7A2E61D621C1A9B10006300C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -141,6 +142,13 @@
 			path = "Persistence Layer";
 			sourceTree = "<group>";
 		};
+		7A2E61D621C1A9B10006300C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -173,6 +181,14 @@
 				TargetAttributes = {
 					7A0FEBEA218E3ADE004DFF21 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.GameCenter.iOS = {
+								enabled = 0;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
